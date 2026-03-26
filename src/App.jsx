@@ -1,7 +1,10 @@
-import Login from "./components/Login";
+import CriarConta from "./components/CriarConta";
 
 function App() {
-  return <Login />;
+  
+  return( 
+  //<Login />,
+  <CriarConta />)
 }
 
 export default App;
