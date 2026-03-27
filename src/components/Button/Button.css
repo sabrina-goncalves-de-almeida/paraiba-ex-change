@@ -1,12 +1,4 @@
-:root {
-  --first-color: #ff5a3c;
-  --second-color: #FFAEA1;
-  --third-color: #fff;
-  --fourth-color: #FA7761;
-  --text-first-color: #fff;
-  --text-second-color: #783131;
-  --text-third-color: #f66249;
-}
+@import '../../global.css'; 
 
 .btnOrange {
   width: 100%;

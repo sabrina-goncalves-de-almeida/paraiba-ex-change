@@ -19,7 +19,7 @@ This react template is managed by [vite](https://vitejs.dev/)
 # Documentação
 ## Button
 
-O componente ```Button``` é um elemento de interface flexível que suporta diferentes estilos visuais, ícones e tipos de ação.
+O componente `Button` é um elemento de interface flexível que suporta diferentes estilos visuais, ícones e tipos de ação.
 
 ### 📋Como usar
 
@@ -49,6 +49,7 @@ import { BUTTON_VARIANTS } from "./components/Button/buttonConfig";
 | `...rest` | `any` | `-` | Qualquer outro atributo nativo (ex: `disabled`, `id`, `title`). |
 
 ### 🎨 Variantes Disponíveis
+
 Para garantir a consistência e evitar erros de digitação, utilize sempre o objeto `BUTTON_VARIANTS`:
 
 `ORANGE`: Aplica a classe `.btnOrange`.
@@ -56,3 +57,36 @@ Para garantir a consistência e evitar erros de digitação, utilize sempre o ob
 `ORANGE_ICON`: Aplica a classe `.btnOrangeWithIcon`.
 
 `WHITE`: Aplica a classe `.btnWhite`.
+
+<hr>
+
+## 📦 Card
+
+O componente `Card` é uma unidade visual autônoma projetada para exibir informações resumidas de produtos ou imóveis, incluindo imagem, preço formatado, localização e um link de ação.
+
+### 📋Como usar
+
+```javascript
+import Card from './components/Card/Card';
+
+// Exemplo de uso
+<Card 
+  id={1} 
+  imgBaseUrl="/assets/produtos/prod-" 
+  name="Cadeira Gamer Pro" 
+  price={1250.90} 
+  address="São Paulo - SP" 
+/>
+```
+### Visualização do botão
+![Card de imóvel](./src/assets/assets-documentation/card.png)
+
+### 🛠 Props (Propriedades)
+
+| Prop | Tipo | Padrão | Descrição | Exemplo |
+| :--- | :---: | :---: | :---: | :---: |
+| `id` | `number` / `string` | `-` | Identificador único do produto (usado na URL e para compor o nome da imagem). | `101`|
+| `imgBaseUrl` | `string` | `-` | O caminho base ou prefixo da imagem. | `"src/assets/item-"`|
+| `name` | `string` | `-` | Título ou nome do produto exibido no card. | `"Smartphone XYZ"`|
+| `price` | `number` | `-` | Valor numérico do produto (será formatado automaticamente para R$). | `2500.50`|
+| `address` | `string` | `-` | Localização ou endereço do vendedor. | `"Rio Tinto - PB"`|
