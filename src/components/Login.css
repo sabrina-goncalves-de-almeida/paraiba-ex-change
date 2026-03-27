@@ -74,7 +74,7 @@ input {
   cursor: pointer;
 }
 
-button {
+/* button {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
@@ -88,7 +88,7 @@ button {
 
 button:hover {
   background-color: #e14a2f;
-}
+} */
 
 .forgot {
   margin-top: 10px;
