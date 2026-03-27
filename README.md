@@ -78,7 +78,7 @@ import Card from './components/Card/Card';
   address="São Paulo - SP" 
 />
 ```
-### Visualização do botão
+### Visualização do card
 ![Card de imóvel](./src/assets/assets-documentation/card.png)
 
 ### 🛠 Props (Propriedades)
