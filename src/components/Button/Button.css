@@ -1,0 +1,71 @@
+:root {
+  --first-color: #ff5a3c;
+  --second-color: #FFAEA1;
+  --third-color: #fff;
+  --fourth-color: #FA7761;
+  --text-first-color: #fff;
+  --text-second-color: #783131;
+  --text-third-color: #f66249;
+}
+
+.btnOrange {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--first-color);
+  color: var(--text-first-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnOrange:hover {
+  background-color: var(--second-color);
+  color: var(--text-second-color);
+}
+
+.btnWhite {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--third-color);
+  color: var(--text-third-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btnWhite:hover {
+  background-color: var(--second-color);
+  color: var(--text-first-color);
+}
+
+.btnOrangeWithIcon{
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--first-color);
+  color: var(--text-first-color);
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnOrangeWithIcon img{
+  margin: 5px 10px 0 10px;
+}
+
+.btnOrangeWithIcon:hover{
+  background-color: var(--second-color);
+  color: var(--text-second-color);
+}
+
+.btnOrangeWithIcon:hover img{
+  content: url('../../assets/shopping-cart/shopping-cart-orange.png');
+}
