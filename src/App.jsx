@@ -1,10 +1,15 @@
-import CriarConta from "./components/CriarConta";
+import React from 'react';
+import RoutesApp from './routes/RoutesApp';
+import CriarConta from "./screens/CriarConta/CriarConta";
 
 function App() {
   
   return( 
-  //<Login />,
-  <CriarConta />)
+    <>
+      <RoutesApp />
+    </>
+    
+  );
 }
 
 export default App;
