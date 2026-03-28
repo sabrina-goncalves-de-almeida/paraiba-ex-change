@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { EyeOff, Eye } from 'lucide-react';
 import './CriarConta.css';
+import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
+import Button from '../../components/Button/Button';
+
 const CriarConta = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -12,9 +15,7 @@ const CriarConta = () => {
         <div className="card-registro">
           
           <div className="logo-container">
-            <span className="logo-p">P</span>
-            <span className="logo-b">B</span>
-            <span className="logo-x">X</span>
+            <img className="pbx-logo" src={pbxLogo} alt="" />
           </div>
 
           <form>
@@ -70,9 +71,7 @@ const CriarConta = () => {
             </div>
 
             <div className="container-btn-submit">
-              <button type="submit" className="btn-submit">
-                Criar conta
-              </button>
+              <Button typeBtn="submit" btnText={"Criar conta"} variant={"Orange"}/>
             </div>
           </form>
         </div>

@@ -27,6 +27,17 @@
     font-weight: bold;
 }
 
+.pbx-logo{
+    width: 6rem;
+    margin-bottom: -40px;
+}
+
+.pbx-logo-carrossel{
+    width: 6rem;
+    margin-bottom: -30px;
+    transform: rotateZ(-15deg);
+}
+
 .logo .p {
     color: #dd8a7b;
     font-weight: bold;

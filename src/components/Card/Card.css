@@ -1,7 +1,7 @@
 @import '../../global.css'; 
 
 .container-card {
-    width: 240px;
+    width: 270px;
     height: 400px; /* Aumentei um pouco para acomodar melhor o conteúdo */
     background-color: var(--fifth-color);
     margin: 20px;
@@ -51,14 +51,15 @@
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-.heart-img {
-    width: 20px;
-    opacity: 0.6;
-    transition: opacity 0.2s;
+.container-heart:hover .heart-img {
+    opacity: 1;
 }
 
-.heart-img:hover {
-    opacity: 1;
+.heart-img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.6;
+    transition: opacity 0.2s;
 }
 
 .container-info-product {
@@ -71,19 +72,19 @@
 }
 
 .name-product {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 500;
     margin: 0;
 }
 
 .price-product {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
 }
 
 .address-seller {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     opacity: 0.6;
     margin-top: auto; /* Empurra o endereço para baixo dentro da info */
     padding-bottom: 10px;

@@ -1,5 +1,6 @@
 import "./Card.css";
 import { Link } from 'react-router-dom';
+import { FiHeart } from "react-icons/fi";
 import heartIcon from "../../assets/icons8-gostar-windows-11-outline/icons8-gostar-48.png";
 import Button from "../Button/Button";
 
@@ -8,9 +9,8 @@ function Card({
     name, 
     price, 
     address, 
-    imgBaseUrl // Nome mais claro para a base da URL
+    imgBaseUrl
 }) {
-    // Formatação de moeda brasileira
     const formattedPrice = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
         currency: 'BRL',
@@ -22,7 +22,7 @@ function Card({
         <article id={`card-${id}`} className="container-card">
             <div className="container-img">
                 <button className="container-heart" aria-label="Adicionar aos favoritos">
-                    <img src={heartIcon} alt="" aria-hidden="true" className="heart-img"/>
+                    <FiHeart aria-hidden="true" className="heart-img"/>
                 </button>
                 <img className="image-product" src={imagePath} alt={`Foto do produto ${name}`} />
             </div>

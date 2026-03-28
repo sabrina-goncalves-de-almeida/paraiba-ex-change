@@ -21,6 +21,10 @@ body {
   margin-bottom: 20px;
 }
 
+.pbx-logo{
+  width: 4rem;
+}
+
 .logo .p {
   color: #ff5a3c;
   font-weight: bold;

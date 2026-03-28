@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./login.css";
+import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
+import Button from "../../components/Button/Button";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -13,9 +15,7 @@ export default function Login() {
   return (
     <div className="container">
       <div className="logo">
-        <span className="p">P</span>
-        <span className="b">B</span>
-        <span className="x">X</span>
+        <img className="pbx-logo" src={pbxLogo} alt="" />
       </div>
 
       <div className="card">
@@ -39,7 +39,7 @@ export default function Login() {
         
           </div>
 
-          <button type="submit">Entrar</button>
+          <Button typeBtn="submit" btnText={"Entrar"} variant={"Orange"}/>
         </form>
       </div>
 

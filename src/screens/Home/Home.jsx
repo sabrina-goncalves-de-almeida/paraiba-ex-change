@@ -15,6 +15,9 @@ const Home = () =>{
         <Link to="/criar-conta">
             <Button btnText={"Criar conta"} variant={"Orange"}/>
         </Link>
+        <Link to="/main">
+            <Button btnText={"Main"} variant={"Orange"}/>
+        </Link>
       </nav>
         <Card 
             id={1} 

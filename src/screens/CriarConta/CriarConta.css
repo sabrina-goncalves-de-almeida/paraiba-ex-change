@@ -39,9 +39,9 @@
   letter-spacing: -0.05em;
 }
 
-.logo-p { color: #FF7A50; }
-.logo-b { color: #32CD32; }
-.logo-x { color: #8A2BE2; }
+.pbx-logo{
+  width: 4rem;
+}
 
 .form-grupo {
   margin-bottom: 1rem;
