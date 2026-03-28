@@ -37,14 +37,20 @@ function Header() {
                             <Button btnText={"Criar conta"} variant={"Orange"} />
                         </Link>
                         <div className="header-icons">
-                            <FiHeart />
-                            <FiShoppingCart />
+                            <Link to="/login">
+                                <FiHeart />
+                            </Link>
+                            <Link to="/login">
+                                <FiShoppingCart />
+                            </Link>
                         </div>
                     </div>
                 ) : (
                     <div className="container-user">
                         <div className="header-icons">
-                            <FiHeart />
+                            <Link to='/favorites'>
+                                <FiHeart />
+                            </Link>
                             <Link to="/carrinho">
                                 <FiShoppingCart />
                             </Link>

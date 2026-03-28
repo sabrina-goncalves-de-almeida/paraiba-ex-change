@@ -2,7 +2,8 @@ import React from 'react';
 import './Favorites.css';
 import { FiSearch, FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi';
 // Importe sua logo aqui (ajuste o caminho se necessário para a sua pasta assets)
-import LogoPBX from '../assets/logo/1211 Sem Título_20260220094915.png';
+import LogoPBX from '../../assets/logo/1211 Sem Título_20260220094915.png';
+import Header from '../../components/Header/Header';
 
 const Favorites = () => {
   // Dados simulados dos itens favoritos
@@ -15,8 +16,9 @@ const Favorites = () => {
 
   return (
     <div className="fav-container">
+      <Header />
       {/* HEADER */}
-      <header className="fav-header">
+      {/* <header className="fav-header">
         <div className="header-limit">
           <div className="logo-area">
             <img src={LogoPBX} alt="Logo PBX" />
@@ -31,7 +33,7 @@ const Favorites = () => {
             <div className="profile-avatar"><FiUser /></div>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* CONTEÚDO DE FAVORITOS */}
       <main className="fav-content">

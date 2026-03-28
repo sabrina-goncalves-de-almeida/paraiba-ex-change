@@ -34,7 +34,7 @@ function Card({
             </div>
             
             <div className="container-button">
-                <Link to={`/teste/${id}`} className="link-details">
+                <Link to={`/info/${id}`} className="link-details">
                     <Button 
                         btnText="Saiba mais"
                         variant="Orange"
