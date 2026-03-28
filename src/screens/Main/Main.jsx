@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
 import "./Main.css";
-import { FiSearch, FiHeart, FiShoppingCart } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png"
+import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
 import Card from "../../components/Card/Card";
-import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
 
 const bannerImages = [
     "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200",
@@ -35,30 +33,7 @@ const Main = () => {
 
     return (
         <div className="pbx-container">
-            <header className="header">
-                <div className="logo">
-                    <img className="pbx-logo" src={pbxLogo} alt="" />
-                </div>
-                <div className="search-bar">
-                    <input type="text" placeholder="Buscar produtos, casas..." />
-                    <FiSearch className="search-icon" />
-                </div>
-                <div className="header-actions">
-                    <div className="auth-buttons">
-                        <Link to="/login">
-                            <Button btnText={"Entrar"} variant={"White"}/>
-                        </Link>
-                        <Link to="/criar-conta">
-                            <Button btnText={"Criar conta"} variant={"Orange"}/>
-                        </Link>
-                    </div>
-                    <div className="header-icons">
-                        <FiHeart />
-                        <FiShoppingCart />
-                    </div>
-                </div>
-            </header>
-
+            <Header />
             <section
                 className="hero"
                 style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${bannerImages[currentBanner]})` }}
@@ -122,7 +97,7 @@ const Main = () => {
                     <div className="footer-social-small">
                         <FaFacebookF /><FaInstagram /><FaTwitter /><FaLinkedinIn /><FaYoutube />
                     </div>
-                    <p className="copyright">Copyright © SAS 2026 | UPPE PM Project</p>
+                    <p className="copyright">Copyright © SAS 2026 |  UFPB PAS Project</p>
                 </div>
             </footer>
         </div>

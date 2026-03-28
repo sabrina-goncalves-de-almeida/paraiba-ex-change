@@ -13,83 +13,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: var(--dark-bg);
-    border-bottom: 1px solid #333;
-}
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.pbx-logo{
-    width: 6rem;
-    margin-bottom: -40px;
-}
-
 .pbx-logo-carrossel{
     width: 6rem;
     margin-bottom: -30px;
     transform: rotateZ(-15deg);
-}
-
-.logo .p {
-    color: #dd8a7b;
-    font-weight: bold;
-}
-
-.logo .b {
-    color: #2ecc71;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-.logo .x {
-    color: #6c2bd9;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
-
-.logo span {
-    color: var(--blue-x);
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    background: #333;
-    padding: 8px 15px;
-    border-radius: 5px;
-    width: 40%;
-}
-
-.search-bar input {
-    background: transparent;
-    border: none;
-    color: white;
-    width: 100%;
-    outline: none;
-}
-
-.search-icon {
-    color: var(--text-gray);
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 10px;
 }
 
 .btn-login {
@@ -109,13 +36,6 @@
     border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.header-icons {
-    display: flex;
-    gap: 15px;
-    font-size: 20px;
-    color: var(--text-gray);
 }
 
 .hero {
