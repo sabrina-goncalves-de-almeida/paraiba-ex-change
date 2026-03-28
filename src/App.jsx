@@ -1,15 +1,12 @@
-import CriarConta from "./components/CriarConta";
-import Main from "./components/Main";
-import Info from "./components/Info";
-import Favorites from "./components/Favorites";
-
+import React from 'react';
+import RoutesApp from './routes/RoutesApp';
 function App() {
-  return (
-    // <Login />,
-    // <CriarConta />,
-    //<Main />,
-    //<Info/>,
-    <Favorites></Favorites>
+  
+  return( 
+    <>
+      <RoutesApp />
+    </>
+    
   );
 }
 

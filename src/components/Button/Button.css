@@ -1,12 +1,4 @@
-:root {
-  --first-color: #ff5a3c;
-  --second-color: #FFAEA1;
-  --third-color: #fff;
-  --fourth-color: #FA7761;
-  --text-first-color: #fff;
-  --text-second-color: #783131;
-  --text-third-color: #f66249;
-}
+@import '../../global.css'; 
 
 .btnOrange {
   width: 100%;
@@ -16,7 +8,7 @@
   border-radius: 5px;
   background-color: var(--first-color);
   color: var(--text-first-color);
-  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -33,7 +25,7 @@
   border-radius: 5px;
   background-color: var(--third-color);
   color: var(--text-third-color);
-  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -50,7 +42,7 @@
   border-radius: 5px;
   background-color: var(--first-color);
   color: var(--text-first-color);
-  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
   display: flex;
   align-items: center;

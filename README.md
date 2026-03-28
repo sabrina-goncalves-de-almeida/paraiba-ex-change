@@ -19,7 +19,7 @@ This react template is managed by [vite](https://vitejs.dev/)
 # Documentação
 ## Button
 
-O componente ```Button``` é um elemento de interface flexível que suporta diferentes estilos visuais, ícones e tipos de ação.
+O componente `Button` é um elemento de interface flexível que suporta diferentes estilos visuais, ícones e tipos de ação.
 
 ### 📋Como usar
 
@@ -49,6 +49,7 @@ import { BUTTON_VARIANTS } from "./components/Button/buttonConfig";
 | `...rest` | `any` | `-` | Qualquer outro atributo nativo (ex: `disabled`, `id`, `title`). |
 
 ### 🎨 Variantes Disponíveis
+
 Para garantir a consistência e evitar erros de digitação, utilize sempre o objeto `BUTTON_VARIANTS`:
 
 `ORANGE`: Aplica a classe `.btnOrange`.
@@ -56,3 +57,76 @@ Para garantir a consistência e evitar erros de digitação, utilize sempre o ob
 `ORANGE_ICON`: Aplica a classe `.btnOrangeWithIcon`.
 
 `WHITE`: Aplica a classe `.btnWhite`.
+
+<hr>
+
+## 📦 Card
+
+O componente `Card` é uma unidade visual autônoma projetada para exibir informações resumidas de produtos ou imóveis, incluindo imagem, preço formatado, localização e um link de ação.
+
+### 📋Como usar
+
+```javascript
+import Card from './components/Card/Card';
+
+// Exemplo de uso
+<Card 
+  id={1} 
+  imgBaseUrl="/assets/produtos/prod-" 
+  name="Cadeira Gamer Pro" 
+  price={1250.90} 
+  address="São Paulo - SP" 
+/>
+```
+### Visualização do card
+![Card de imóvel](./src/assets/assets-documentation/card.png)
+
+### 🛠 Props (Propriedades)
+
+| Prop | Tipo | Padrão | Descrição | Exemplo |
+| :--- | :---: | :---: | :---: | :---: |
+| `id` | `number` / `string` | `-` | Identificador único do produto (usado na URL e para compor o nome da imagem). | `101`|
+| `imgBaseUrl` | `string` | `-` | O caminho base ou prefixo da imagem. | `"src/assets/item-"`|
+| `name` | `string` | `-` | Título ou nome do produto exibido no card. | `"Smartphone XYZ"`|
+| `price` | `number` | `-` | Valor numérico do produto (será formatado automaticamente para R$). | `2500.50`|
+| `address` | `string` | `-` | Localização ou endereço do vendedor. | `"Rio Tinto - PB"`|
+
+<hr>
+
+## ProductCarousel
+
+O componente `ProductCarousel` é um carrossel de imagens responsivo, moderno e acessível, que mostra as imagens do produto ou da residência que está para alugar.
+
+### 📋Como usar
+
+Importe o componente e passe um objeto contendo o array de imagens:
+```javascript
+import ProductCarousel from './components/ProductCarousel';
+
+const produtoExemplo = {
+  id: 1,
+  images: [
+    "https://link-da-imagem-1.jpg",
+    "https://link-da-imagem-2.jpg",
+    "https://link-da-imagem-3.jpg"
+  ]
+};
+
+function App() {
+  return (
+    <div style={{ maxWidth: '600px', margin: '20px auto' }}>
+      <ProductCarousel product={produtoExemplo} />
+    </div>
+  );
+}
+```
+
+### Visualização do carrossel
+![Carrossel de imóvel](./src/assets/assets-documentation/carrossel.png)
+
+### 🛠 Props (Propriedades)
+
+| Prop | Tipo | Descrição |
+| :--- | :---: | :---: |
+| `product` | `Object` | Objeto contendo os dados do produto. |
+| `product.images` | `Array` | Lista de URLs das imagens (Obrigatório). |
