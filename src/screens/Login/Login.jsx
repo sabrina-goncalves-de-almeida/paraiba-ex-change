@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./login.css";
+import { AuthContext } from "../../context/AuthContext";
 import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
 import Button from "../../components/Button/Button";
 
@@ -7,9 +8,23 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = () => {
+    const users = JSON.parse(localStorage.getItem("users_list") || "[]");
+    const found = users.find(u => u.email === email && u.password === senha);
+
+    if (found) {
+      login(found);
+    } else {
+      alert("Usuário não encontrado");
+    }
+  };
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log({ email, senha });
+    handleLogin();
   }
 
   return (

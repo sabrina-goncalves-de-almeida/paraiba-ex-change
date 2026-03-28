@@ -58,4 +58,35 @@
     gap: 15px;
     font-size: 20px;
     color: var(--text-gray);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.logout-button{
+    cursor: 'pointer';
+    margin-left: 10px;
+}
+
+.container-user{
+    display: flex;
+}
+
+.user-info{
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 40px;
+    color: var(--text-gray);
+}
+
+.user-welcome{
+    font-size: 16px;
+    color: var(--text-first-color);
+}
+
+.logout-button{
+    font-size: 20px;
+    color: var(--text-first-color);
 }
