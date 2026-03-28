@@ -90,3 +90,43 @@ import Card from './components/Card/Card';
 | `name` | `string` | `-` | Título ou nome do produto exibido no card. | `"Smartphone XYZ"`|
 | `price` | `number` | `-` | Valor numérico do produto (será formatado automaticamente para R$). | `2500.50`|
 | `address` | `string` | `-` | Localização ou endereço do vendedor. | `"Rio Tinto - PB"`|
+
+<hr>
+
+## ProductCarousel
+
+O componente `ProductCarousel` é um carrossel de imagens responsivo, moderno e acessível, que mostra as imagens do produto ou da residência que está para alugar.
+
+### 📋Como usar
+
+Importe o componente e passe um objeto contendo o array de imagens:
+```javascript
+import ProductCarousel from './components/ProductCarousel';
+
+const produtoExemplo = {
+  id: 1,
+  images: [
+    "https://link-da-imagem-1.jpg",
+    "https://link-da-imagem-2.jpg",
+    "https://link-da-imagem-3.jpg"
+  ]
+};
+
+function App() {
+  return (
+    <div style={{ maxWidth: '600px', margin: '20px auto' }}>
+      <ProductCarousel product={produtoExemplo} />
+    </div>
+  );
+}
+```
+
+### Visualização do carrossel
+![Carrossel de imóvel](./src/assets/assets-documentation/carrossel.png)
+
+### 🛠 Props (Propriedades)
+
+| Prop | Tipo | Descrição |
+| :--- | :---: | :---: |
+| `product` | `Object` | Objeto contendo os dados do produto. |
+| `product.images` | `Array` | Lista de URLs das imagens (Obrigatório). |

@@ -3,10 +3,20 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import './Home.css'
 import Card from '../../components/Card/Card';
+import ProductCarousel from '../../components/CarouselProduct/ProductCarousel';
 
 const Home = () =>{
+    const meuProduto = {
+        images: [
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600"
+        ]
+    };
   return (
     <div>
+        
+
+        <ProductCarousel product={meuProduto} />
       <h1>Página Inicial</h1>
       <nav className="container-nav">
         <Link to="/login">
@@ -15,7 +25,7 @@ const Home = () =>{
         <Link to="/criar-conta">
             <Button btnText={"Criar conta"} variant={"Orange"}/>
         </Link>
-        <Link to="/main">
+        <Link to="/">
             <Button btnText={"Main"} variant={"Orange"}/>
         </Link>
       </nav>
