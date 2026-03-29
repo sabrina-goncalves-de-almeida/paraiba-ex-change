@@ -9,6 +9,7 @@ import Main from "../screens/Main/Main";
 import Favorites from "../screens/Favorites/Favorites";
 import { AuthProvider } from "../context/AuthContext";
 import Info from "../screens/Info/Info";
+import Checkout from "../screens/Checkout/Checkout";
 
 const RoutesApp = () => {
    return(
@@ -22,6 +23,7 @@ const RoutesApp = () => {
                     <Route element={<CriarConta />}   path="/criar-conta" />
                     <Route element={<Info />}   path="/info/:id" />
                     <Route element={<Teste />}   path="/teste/:id" />
+                    <Route element={<Checkout />} path="/checkout" />
                 </Routes>
             </BrowserRouter>
         </AuthProvider>
