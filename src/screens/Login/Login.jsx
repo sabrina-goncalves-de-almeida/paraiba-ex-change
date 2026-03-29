@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
 import "./login.css";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
 import Button from "../../components/Button/Button";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -16,6 +18,7 @@ export default function Login() {
 
     if (found) {
       login(found);
+      navigate("/");
     } else {
       alert("Usuário não encontrado");
     }
