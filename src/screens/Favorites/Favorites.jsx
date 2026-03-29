@@ -1,12 +1,10 @@
 import React from 'react';
 import './Favorites.css';
 import { FiSearch, FiHeart, FiShoppingCart, FiUser } from 'react-icons/fi';
-// Importe sua logo aqui (ajuste o caminho se necessário para a sua pasta assets)
 import LogoPBX from '../../assets/logo/1211 Sem Título_20260220094915.png';
 import Header from '../../components/Header/Header';
 
 const Favorites = () => {
-  // Dados simulados dos itens favoritos
   const favoritos = [
     { id: 1, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
     { id: 2, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
@@ -34,8 +32,6 @@ const Favorites = () => {
           </div>
         </div>
       </header> */}
-
-      {/* CONTEÚDO DE FAVORITOS */}
       <main className="fav-content">
         <h1 className="main-title">Favoritos</h1>
 
@@ -50,7 +46,6 @@ const Favorites = () => {
               <div key={item.id} className="fav-item">
                 <div className="item-info">
                   <div className="item-image">
-                    {/* Placeholder da imagem do produto */}
                     <img src="https://images.unsplash.com/photo-1671438118097-479e63198629?q=80&w=877&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt={item.nome} />
                   </div>
                   <div className="item-details">
