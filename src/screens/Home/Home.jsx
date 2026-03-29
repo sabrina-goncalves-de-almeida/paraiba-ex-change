@@ -15,7 +15,7 @@ const Home = () =>{
     };
   return (
     <div>
-        <ShoppingCartItem item={"Casa grande XD"} price={50000} amount={2} imageProduct={"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=140"}/>
+        <ShoppingCartItem item={"Casa campo Grande"} price={50000} amount={2} imageProduct={"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=140"}/>
         <ProductCarousel product={meuProduto} />
       <h1>Página Inicial</h1>
       <nav className="container-nav">

@@ -8,11 +8,10 @@
     min-height: 100px;
     border: none;
     cursor: pointer;
-    display: block; /* Divs são block por padrão, mas é bom garantir */
-    outline: none;  /* Remove a borda padrão de foco se desejar customizar */
+    display: block;
+    outline: none;
 }
 
-/* Opcional: Adicionar um efeito visual quando o usuário usa o teclado (foco) */
 .button-container-item:focus {
     box-shadow: 0 0 0 2px var(--text-first-color);
 }
@@ -28,15 +27,15 @@
 .img-product {
     height: 100px;
     width: 100px;
-    object-fit: cover; /* Garante que a imagem não distorça */
+    object-fit: cover;
 }
 
 .container-info-buy {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 20px; /* Padding equilibrado */
-    flex-grow: 1; /* Faz esse container ocupar o espaço restante */
+    padding: 0 20px;
+    flex-grow: 1;
 }
 
 .span-name-item {
@@ -47,7 +46,7 @@
 .container-price-amount {
     display: flex;
     flex-direction: row;
-    gap: 15px; /* Espaço entre preço e quantidade */
+    gap: 15px;
     margin-top: 5px;
     padding-left: 10px;
 }
@@ -55,26 +54,26 @@
 .span-amount-item {
     font-size: 1.1rem;
     font-weight: 500;
-    color: var(--text-second-color); /* Se tiver uma cor secundária */
+    color: var(--text-second-color);
 }
 
 .span-total-item {
     font-size: 1.25rem;
     font-weight: 600;
     padding: 0 30px;
-    white-space: nowrap; /* Impede que o preço quebre linha */
+    white-space: nowrap;
 }
 
 .container-buttons {
     display: flex;
-    height: 100px; /* Alinha com a altura do container */
+    height: 100px;
 }
 
 .button-format-basic {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px; /* Reduzi um pouco para telas menores */
+    width: 80px;
     height: 100%;
     border: none;
     cursor: pointer;
@@ -83,15 +82,13 @@
 }
 
 .button-format-basic:hover {
-    filter: contrast(1.2); /* Dá um destaque no clique */
+    filter: contrast(1.2);
 }
 
-/* Cores específicas usando o seu padrão */
 .button-minus { color: var(--icon-color-blue); background-color: var(--icons-background-second); }
 .button-trash { color: var(--icon-color-red); background-color: var(--icons-background-third); }
 .button-back  { color: var(--icon-color-yellow); background-color: var(--icons-background-fourth); }
 
-/* Media Query para Celulares */
 @media (max-width: 600px) {
     .container-item {
         flex-direction: column;
@@ -104,7 +101,7 @@
     }
 
     .button-format-basic {
-        flex: 1; /* Botões dividem o espaço igualmente no celular */
+        flex: 1;
         height: 60px;
     }
 }

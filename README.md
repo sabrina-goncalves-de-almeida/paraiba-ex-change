@@ -145,12 +145,15 @@ O componente `ShoppingCartItem` renderiza um item individual dentro do carrinho 
 import ShoppingCartItem from './components/ShoppingCartItem';
 
 <ShoppingCartItem 
-  item="Teclado Mecânico RGB"
-  price={250.00}
+  item="Casa campo grande"
+  price={50000.00}
   amount={2}
   imageProduct="https://link-da-imagem.com/produto.jpg"
 />
 ```
+
+### Visualização do carrossel
+![Item do carrinho](./src/assets/assets-documentation/shoppingCartItem.png)
 
 ### 🛠 Props (Propriedades)
 
