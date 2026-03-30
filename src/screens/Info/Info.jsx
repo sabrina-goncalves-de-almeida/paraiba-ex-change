@@ -1,22 +1,34 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useContext, useMemo } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import Button from "../../components/Button/Button";
+import { BUTTON_VARIANTS } from "../../components/Button/buttonConfig";
+import { LISTINGS_MOCK } from '../../data/listings';
 import './Info.css';
 
-import { 
-  // FiSearch, 
-  // FiHeart, 
-  // FiShoppingCart, 
-  // FiUser, 
-  // FiChevronLeft, 
-  // FiChevronRight,
-  FiMessageSquare 
-} from 'react-icons/fi';
+import {  FiMessageSquare } from 'react-icons/fi';
 
 import Header from '../../components/Header/Header';
 import ProductCarousel from '../../components/CarouselProduct/ProductCarousel';
 
-const Info = () => {
+const Info = ({ product }) => {
+  const { addToCart, user } = useContext(AuthContext);
   const { id } = useParams();
+
+  const currentProduct = useMemo(() => {
+    return LISTINGS_MOCK.find(item => String(item.id) === String(id));
+  }, [id]);
+
+  if (!currentProduct) {
+    return (
+      <div className="info-container">
+        <Header />
+        <h2>Ops! Esse anúncio não foi encontrado.</h2>
+      </div>
+    );
+  }
+
   const imovel = {
     id: id,
     images: [
@@ -24,6 +36,16 @@ const Info = () => {
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600"
     ]
+  };
+
+  const handleAddClick = () => {
+    if (!user) {
+      alert("Você precisa estar logado para adicionar itens ao carrinho!");
+      return;
+    }
+
+    addToCart(currentProduct);
+    alert(`${currentProduct.title} adicionado ao carrinho!`);
   };
   return (
     <div className="info-container">
@@ -53,7 +75,7 @@ const Info = () => {
         <div className="property-grid">
 
           <div className="property-visual">
-            <ProductCarousel product={imovel} />
+            <ProductCarousel product={currentProduct} />
             {/* <div className="main-image-wrapper">
               <img 
                 src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400" 
@@ -65,12 +87,9 @@ const Info = () => {
             </div> */}
 
             <section className="description-area">
-              <h2>Apartamento próximo ao centro {id}</h2>
+              <h2>{currentProduct.title}</h2>
               <p>
-                Apartamento aconchegante próximo ao centro, com ambiente moderno, 
-                bem iluminado e integrado entre sala e jantar. Oferece praticidade no 
-                dia a dia e fácil acesso a comércios, serviços e transporte, sendo 
-                ideal para morar ou investir.
+                {currentProduct.description}
               </p>
             </section>
           </div>
@@ -78,11 +97,12 @@ const Info = () => {
           <aside className="property-details">
             <div className="price-tag">
               <span className="symbol">R$</span>
-              <span className="value">1999,00</span>
+              <span className="value">{currentProduct.price.toLocaleString('pt-BR')}</span>
             </div>
-            <p className="category">Aluguel</p>
-
+            <p className="category">{currentProduct.type === 'property' ? 'Aluguel' : 'Venda'}</p>
+            
             <div className="contact-info">
+              <p>Local: {currentProduct.local}</p>
               <p>E-mail: samuel21@hotmail.com</p>
               <p>Telefone/WhatsApp: (83) 91546-2356</p>
             </div>
@@ -93,7 +113,11 @@ const Info = () => {
                 Chat com o vendedor
               </button>
             </Link>
-            
+            <Button 
+              variant={BUTTON_VARIANTS.ORANGE_ICON} 
+              btnText="Adicionar ao Carrinho" 
+              onClick={handleAddClick} 
+            />
           </aside>
 
         </div>

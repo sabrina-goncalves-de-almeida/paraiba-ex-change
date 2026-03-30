@@ -4,7 +4,7 @@ import { BsArrowReturnLeft } from "react-icons/bs";
 import { FaMinus, FaTrashAlt } from "react-icons/fa";
 import "./ShoppingCartItem.css";
 
-function ShoppingCartItem({ item, price, amount, imageProduct }) {
+function ShoppingCartItem({ item, price, amount, imageProduct, onRemove }) {
   const [active, setActive] = useState(true);
 
   const totalPrice = (price * amount).toLocaleString("pt-BR", {
@@ -37,7 +37,7 @@ function ShoppingCartItem({ item, price, amount, imageProduct }) {
             <button className="button-format-basic button-minus" onClick={(e) => e.stopPropagation()}>
               <FaMinus />
             </button>
-            <button className="button-format-basic button-trash" onClick={(e) => e.stopPropagation()}>
+            <button className="button-format-basic button-trash" onClick={(e) =>{ e.stopPropagation(); onRemove()}}>
               <FaTrashAlt />
             </button>
             <Link to="/" onClick={(e) => e.stopPropagation()}>

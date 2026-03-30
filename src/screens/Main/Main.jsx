@@ -4,20 +4,12 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "re
 import pbxLogo from "../../assets/logo/1211 Sem Título_20260220094915.png";
 import Card from "../../components/Card/Card";
 import Header from "../../components/Header/Header";
+import { LISTINGS_MOCK } from '../../data/listings';
 
 const bannerImages = [
     "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200",
     "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200",
     "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200"
-];
-
-const productsData = [
-    { id: 1, image: 'https://images.unsplash.com/photo-1671438118097-479e63198629?q=80&w=877&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', title: 'Camisa Polo - Cores', price: 50.00, local: 'Local - PB' },
-    { id: 2, image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400', title: 'Camiseta V - Cores', price: 25.00, local: 'Local - PB' },
-    { id: 3, image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400', title: 'Calça Jeans', price: 100.00, local: 'Local - PB' },
-    { id: 4, image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', title: 'Casa - 150m²', price: 4750.00, local: 'Local - PB' },
-    { id: 5, image: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400', title: 'Apartamento no centro - 70m²', price: 1999.00, local: 'Local - PB' },
-    { id: 6, image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400', title: 'Casa com piscina - 270m²', price: 7000.00, local: 'Local - PB' },
 ];
 
 const Main = () => {
@@ -59,8 +51,8 @@ const Main = () => {
 
             <main className="product-section">
                 <div className="product-grid">
-                    {productsData.map((product) => (
-                        <Card key={product.id} id={product.id} imgBaseUrl={product.image} name={product.title} price={product.price} address={product.local}/>
+                    {LISTINGS_MOCK.map((product) => (
+                        <Card key={product.id} id={product.id} imgBaseUrl={product.image} name={product.title} price={product.price} address={product.local} type={product.type}/>
                     ))}
                 </div>
             </main>

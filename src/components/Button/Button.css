@@ -1,7 +1,9 @@
 @import '../../global.css'; 
 
 .btnOrange {
-  width: 100%;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   padding: 10px;
   border: none;
@@ -18,7 +20,9 @@
 }
 
 .btnWhite {
-  width: 100%;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   padding: 10px;
   border: none;
@@ -35,7 +39,9 @@
 }
 
 .btnOrangeWithIcon{
-  width: 100%;
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   padding: 10px;
   border: none;

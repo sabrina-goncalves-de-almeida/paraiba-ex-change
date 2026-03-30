@@ -1,45 +1,77 @@
 @import '../../global.css';
 
-.container-shopping-cart-and-header{
+/* 1. Reset e Container Principal */
+.container-shopping-cart-and-header {
     background-color: var(--fifth-color);
     color: var(--text-first-color);
-    height: 100%;
+    min-height: 100vh; /* Garante que cubra a tela toda mesmo se tiver pouco item */
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.container-shopping-cart{
+/* 2. Layout do Conteúdo */
+.container-shopping-cart {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2rem; /* Espaçamento interno padrão */
+    max-width: 1200px; /* Evita que o carrinho fique "esticado" em telas ultra-wide */
+    margin: 0 auto;    /* Centraliza o bloco na tela */
+    width: 100%;
 }
 
-.container-titles-table-prices{
+/* 3. Cabeçalho da Tabela */
+.container-titles-table-prices {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between; /* Melhor que space-around para alinhar com as bordas */
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil para separar */
 }
 
-.container-itens-shopping-cart{
-    width: 80%;
+.container-itens-shopping-cart {
+    width: 100%; /* Ocupa o espaço disponível do container pai */
+    margin: 1.5rem 0;
 }
 
-.container-titles-table-text{
-    font-size: 28px;
+/* 4. Tipografia */
+.container-titles-table-text {
+    font-size: 1.75rem; /* ~28px */
+    font-weight: 500;
 }
 
-.container-titles-table-total{
-    font-size: 32px;
+.container-titles-table-total {
+    font-size: 2rem; /* ~32px */
+    color: var(--primary-color); /* Se tiver uma cor de destaque, use aqui */
 }
 
-.container-buttons-buying{
-    display: grid;
-    gap: 20px;
-    width: 80%;
-    grid-auto-flow: column;
-    padding: 10px 300px 30px 10px;
+/* 5. Área de Botões (Otimizada) */
+.container-buttons-buying {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    margin-top: 2rem;
 }
 
-.link-formatation{
+/* 6. Utilitários */
+.link-formatation {
     text-decoration: none;
     color: inherit;
+    display: inline-block; /* Garante que o link aceite as dimensões do botão */
+}
+
+/* 7. Media Query para Celulares */
+@media (max-width: 768px) {
+    .container-buttons-buying {
+        flex-direction: column; /* Botões um em cima do outro no mobile */
+        align-items: stretch;
+    }
+    
+    .container-titles-table-text, 
+    .container-titles-table-total {
+        font-size: 1.25rem;
+    }
 }
