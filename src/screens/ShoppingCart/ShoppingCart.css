@@ -1,72 +1,65 @@
 @import '../../global.css';
 
-/* 1. Reset e Container Principal */
 .container-shopping-cart-and-header {
     background-color: var(--fifth-color);
     color: var(--text-first-color);
-    min-height: 100vh; /* Garante que cubra a tela toda mesmo se tiver pouco item */
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/* 2. Layout do Conteúdo */
 .container-shopping-cart {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem; /* Espaçamento interno padrão */
-    max-width: 1200px; /* Evita que o carrinho fique "esticado" em telas ultra-wide */
-    margin: 0 auto;    /* Centraliza o bloco na tela */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
 }
 
-/* 3. Cabeçalho da Tabela */
 .container-titles-table-prices {
     display: flex;
     width: 100%;
-    justify-content: space-between; /* Melhor que space-around para alinhar com as bordas */
+    justify-content: space-between;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil para separar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .container-itens-shopping-cart {
-    width: 100%; /* Ocupa o espaço disponível do container pai */
+    width: 100%;
     margin: 1.5rem 0;
 }
 
-/* 4. Tipografia */
 .container-titles-table-text {
-    font-size: 1.75rem; /* ~28px */
+    font-size: 1.75rem;
     font-weight: 500;
 }
 
 .container-titles-table-total {
-    font-size: 2rem; /* ~32px */
-    color: var(--primary-color); /* Se tiver uma cor de destaque, use aqui */
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
-/* 5. Área de Botões (Otimizada) */
 .container-buttons-buying {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    flex-wrap: wrap;
     gap: 1.5rem;
     width: 100%;
-    justify-content: flex-end; /* Alinha os botões à direita */
+    justify-content: flex-end;
     margin-top: 2rem;
 }
 
-/* 6. Utilitários */
 .link-formatation {
     text-decoration: none;
     color: inherit;
-    display: inline-block; /* Garante que o link aceite as dimensões do botão */
+    display: inline-block;
 }
 
-/* 7. Media Query para Celulares */
 @media (max-width: 768px) {
     .container-buttons-buying {
-        flex-direction: column; /* Botões um em cima do outro no mobile */
+        flex-direction: column;
         align-items: stretch;
     }
     

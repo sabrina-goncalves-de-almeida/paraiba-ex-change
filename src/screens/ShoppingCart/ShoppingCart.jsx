@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button";
 import { BUTTON_VARIANTS } from "../../components/Button/buttonConfig";
 import Header from "../../components/Header/Header";
 import ShoppingCartItem from "../../components/ShoppingCartItem/ShoppingCartItem";
-import cartIcon from "../../assets/shopping-cart/shopping-cart-white.png";
+import { FaShoppingCart } from "react-icons/fa";
 import "./ShoppingCart.css";
 
 function ShoppingCart() {
@@ -25,7 +25,7 @@ function ShoppingCart() {
   if (!user) {
     return <h2>Por favor, faça login para ver seu carrinho.</h2>;
   }
-
+  console.log("IDs presentes no carrinho:", cartItems.map(p => p.id));
   return (
     <div className="container-shopping-cart-and-header">
       <Header />
@@ -34,9 +34,10 @@ function ShoppingCart() {
         
         <div className="container-itens-shopping-cart">
           {cartItems.length > 0 ? (
-            cartItems.map((product) => (
+            cartItems.map((product, index) => (
               <ShoppingCartItem 
-                key={product.id} 
+                key={`${product.id}-${index}`}
+                id={product.id} 
                 item={product.title} 
                 price={product.price} 
                 amount={product.amount} 
@@ -62,7 +63,7 @@ function ShoppingCart() {
             <Button 
               variant={BUTTON_VARIANTS.ORANGE_ICON} 
               btnText="Continuar comprando" 
-              imageIcon={cartIcon} 
+              icon={FaShoppingCart} 
             />
           </Link>
         </div>

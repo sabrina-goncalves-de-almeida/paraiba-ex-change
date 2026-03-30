@@ -8,6 +8,7 @@ import { LISTINGS_MOCK } from '../../data/listings';
 import './Info.css';
 
 import {  FiMessageSquare } from 'react-icons/fi';
+import { FaShoppingCart } from "react-icons/fa";
 
 import Header from '../../components/Header/Header';
 import ProductCarousel from '../../components/CarouselProduct/ProductCarousel';
@@ -28,15 +29,6 @@ const Info = ({ product }) => {
       </div>
     );
   }
-
-  const imovel = {
-    id: id,
-    images: [
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400",
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600"
-    ]
-  };
 
   const handleAddClick = () => {
     if (!user) {
@@ -107,16 +99,18 @@ const Info = ({ product }) => {
               <p>Telefone/WhatsApp: (83) 91546-2356</p>
             </div>
 
-            <Link to="/shopping-cart" className="link-formatation">
-              <button className="btn-chat">
-                <FiMessageSquare />
-                Chat com o vendedor
-              </button>
+            <Link to="/" className="link-formatation">
+              <Button 
+                variant={BUTTON_VARIANTS.ORANGE_ICON} 
+                btnText="Chat com o vendedor" 
+                icon={FiMessageSquare} 
+              />
             </Link>
             <Button 
               variant={BUTTON_VARIANTS.ORANGE_ICON} 
               btnText="Adicionar ao Carrinho" 
               onClick={handleAddClick} 
+              icon={FaShoppingCart}
             />
           </aside>
 

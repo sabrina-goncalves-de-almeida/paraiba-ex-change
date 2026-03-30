@@ -42,6 +42,7 @@
   display: inline-flex; 
   align-items: center;
   justify-content: center;
+  gap: 10px;
   margin-top: 20px;
   padding: 10px;
   border: none;
@@ -55,15 +56,8 @@
   justify-content: center;
 }
 
-.btnOrangeWithIcon img{
-  margin: 5px 10px 0 10px;
-}
-
 .btnOrangeWithIcon:hover{
   background-color: var(--second-color);
   color: var(--text-second-color);
 }
 
-.btnOrangeWithIcon:hover img{
-  content: url('../../assets/shopping-cart/shopping-cart-orange.png');
-}

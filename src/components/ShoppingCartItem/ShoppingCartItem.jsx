@@ -4,8 +4,13 @@ import { BsArrowReturnLeft } from "react-icons/bs";
 import { FaMinus, FaTrashAlt } from "react-icons/fa";
 import "./ShoppingCartItem.css";
 
-function ShoppingCartItem({ item, price, amount, imageProduct, onRemove }) {
+function ShoppingCartItem({ item, price, amount, imageProduct, onRemove, id }) {
   const [active, setActive] = useState(true);
+
+  const formatedPrice = price.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
 
   const totalPrice = (price * amount).toLocaleString("pt-BR", {
     style: "currency",
@@ -23,7 +28,7 @@ function ShoppingCartItem({ item, price, amount, imageProduct, onRemove }) {
         <div className="container-info-buy">
           <span className="span-name-item">{item}</span>
           <div className="container-price-amount">
-            <span className="span-name-item">R${price}</span>
+            <span className="span-name-item">{formatedPrice}</span>
             <span className="span-amount-item">x {formattedAmount}</span>
           </div>
         </div>
@@ -40,7 +45,7 @@ function ShoppingCartItem({ item, price, amount, imageProduct, onRemove }) {
             <button className="button-format-basic button-trash" onClick={(e) =>{ e.stopPropagation(); onRemove()}}>
               <FaTrashAlt />
             </button>
-            <Link to="/" onClick={(e) => e.stopPropagation()}>
+            <Link to={`/info/${id}`} onClick={(e) => e.stopPropagation()}>
               <div className="button-format-basic button-back">
                 <BsArrowReturnLeft />
               </div>
