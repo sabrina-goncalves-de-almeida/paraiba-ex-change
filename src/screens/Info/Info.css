@@ -144,6 +144,11 @@
 
 .btn-chat:hover { background-color: #e54e3a; }
 
+.link-formatation{
+    text-decoration: none;
+    color: inherit;
+}
+
 @media (max-width: 850px) {
   .property-grid { grid-template-columns: 1fr; }
   .search-box { display: none; }

@@ -90,3 +90,8 @@
     font-size: 20px;
     color: var(--text-first-color);
 }
+
+.link-formatation{
+    text-decoration: none;
+    color: inherit;
+}

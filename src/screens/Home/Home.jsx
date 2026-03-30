@@ -4,6 +4,8 @@ import Button from '../../components/Button/Button';
 import './Home.css'
 import Card from '../../components/Card/Card';
 import ProductCarousel from '../../components/CarouselProduct/ProductCarousel';
+import ShoppingCartItem from '../../components/ShoppingCartItem/ShoppingCartItem';
+import FavoriteItem from '../../components/FavoriteItem/FavoriteItem';
 
 const Home = () =>{
     const meuProduto = {
@@ -14,8 +16,8 @@ const Home = () =>{
     };
   return (
     <div>
-        
-
+        <FavoriteItem  item={"Casa campo Grande"} price={50000} amount={2} imageProduct={"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=140"}/>
+        <ShoppingCartItem item={"Casa campo Grande"} price={50000} amount={2} imageProduct={"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=140"}/>
         <ProductCarousel product={meuProduto} />
       <h1>Página Inicial</h1>
       <nav className="container-nav">

@@ -155,3 +155,9 @@
   background-color: #e54e3a;
   transform: translateY(-2px);
 }
+
+.link-formatation {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}

@@ -15,4 +15,12 @@
   --text-gray: #a4a4a4;
 
   --icons-background-first: #808080ae;
+  --icons-background-second: #4FB6E2;
+  --icons-background-third: #FF5C5C;
+  --icons-background-fourth: #FFF07C;
+  --icons-background-fifth: #F66249;
+
+  --icon-color-blue: #1F375C;
+  --icon-color-red: #5C0707;
+  --icon-color-yellow: #9E610B;
 }

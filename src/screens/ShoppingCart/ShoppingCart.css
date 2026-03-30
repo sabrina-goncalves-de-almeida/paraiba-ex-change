@@ -1,0 +1,70 @@
+@import '../../global.css';
+
+.container-shopping-cart-and-header {
+    background-color: var(--fifth-color);
+    color: var(--text-first-color);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-shopping-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container-titles-table-prices {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container-itens-shopping-cart {
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.container-titles-table-text {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.container-titles-table-total {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.container-buttons-buying {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.link-formatation {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .container-buttons-buying {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .container-titles-table-text, 
+    .container-titles-table-total {
+        font-size: 1.25rem;
+    }
+}

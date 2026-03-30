@@ -130,3 +130,48 @@ function App() {
 | :--- | :---: | :---: |
 | `product` | `Object` | Objeto contendo os dados do produto. |
 | `product.images` | `Array` | Lista de URLs das imagens (Obrigatório). |
+
+
+<hr>
+
+## 🛒 ShoppingCartItem
+
+O componente `ShoppingCartItem` renderiza um item individual dentro do carrinho de compras. Ele possui dois estados visuais alternáveis via clique: a exibição do preço total ou o acesso a ações de gerenciamento (remover, diminuir quantidade e voltar).
+
+
+### 📋Como usar
+
+```javascript
+import ShoppingCartItem from './components/ShoppingCartItem';
+
+<ShoppingCartItem 
+  item="Casa campo grande"
+  price={50000.00}
+  amount={2}
+  imageProduct="https://link-da-imagem.com/produto.jpg"
+/>
+```
+
+### Visualização do carrossel
+![Item do carrinho](./src/assets/assets-documentation/shoppingCartItem.png)
+
+### 🛠 Props (Propriedades)
+
+| Prop | Tipo | Descrição |
+| :--- | :---: | :---: |
+| `item` | `string` | Nome do produto exibido no card. |
+| `price` | `number` | Preço unitário do produto. |
+| `amount` | `number` | Quantidade de itens selecionados. |
+| `imageProduct` | `string` | URL ou path da imagem do produto. |
+
+### 💡 Funcionalidades
+
+Cálculo Automático: O preço total é calculado automaticamente multiplicando `price` * `amount`.
+
+Interatividade: Ao clicar no card, o estado `active` é alternado.
+
+Estado Ativo (`true`): Exibe o valor total formatado em Reais (BRL).
+
+Estado Inativo (`false`): Exibe botões de controle (Diminuir, Excluir e Voltar).
+
+Responsividade: O layout adapta-se a diferentes larguras de tela, utilizando `max-width` e Flexbox.

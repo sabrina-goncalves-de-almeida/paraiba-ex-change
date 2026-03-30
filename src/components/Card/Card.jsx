@@ -1,7 +1,6 @@
 import "./Card.css";
 import { Link } from 'react-router-dom';
 import { FiHeart } from "react-icons/fi";
-import heartIcon from "../../assets/icons8-gostar-windows-11-outline/icons8-gostar-48.png";
 import Button from "../Button/Button";
 
 function Card({ 
@@ -9,7 +8,8 @@ function Card({
     name, 
     price, 
     address, 
-    imgBaseUrl
+    imgBaseUrl,
+    type
 }) {
     const formattedPrice = new Intl.NumberFormat('pt-BR', {
         style: 'currency',
@@ -29,7 +29,10 @@ function Card({
 
             <div className="container-info-product">
                 <h3 className="name-product">{name}</h3>
-                <p className="price-product">{formattedPrice}</p>
+                <p className="price-product">
+                    {formattedPrice}
+                    {type === 'property' && <span className="unit"> /mês</span>}
+                </p>
                 <p className="address-seller">{address}</p>
             </div>
             

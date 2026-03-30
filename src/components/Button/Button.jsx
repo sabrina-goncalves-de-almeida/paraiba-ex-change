@@ -3,7 +3,7 @@ import "./Button.css";
 function Button({ 
   btnText, 
   btnFunction, 
-  imageIcon, 
+  icon: Icon, // Renomeamos para 'Icon' (com maiúscula) para o React entender como componente
   variant = "primary",
   typeBtn = "button", 
   ...rest
@@ -15,7 +15,9 @@ function Button({
       className={`btn${variant}`} 
       {...rest}
     >
-      {imageIcon && <img src={imageIcon} alt="" />} 
+      {/* Se existir um ícone, ele será renderizado como um componente */}
+      {Icon && <Icon className="btn-icon" />} 
+      
       <span>{btnText}</span>
     </button>
   );

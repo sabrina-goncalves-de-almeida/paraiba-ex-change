@@ -98,4 +98,5 @@
 .link-details {
     text-decoration: none;
     width: 100%;
+    color: inherit;
 }
