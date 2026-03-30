@@ -1,20 +1,22 @@
 import React from 'react';
 import './Favorites.css';
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { FaShoppingCart } from "react-icons/fa";
-import LogoPBX from '../../assets/logo/1211 Sem Título_20260220094915.png';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
 import { BUTTON_VARIANTS } from '../../components/Button/buttonConfig';
 import { Link } from 'react-router-dom';
+import FavoriteItem from '../../components/FavoriteItem/FavoriteItem';
 
 const Favorites = () => {
-  const favoritos = [
-    { id: 1, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
-    { id: 2, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
-    { id: 3, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
-    { id: 4, nome: "Camisa Polo - Cores", preco: 50.00, qtd: 2, total: 100.00 },
-  ];
+  const { user, removeFromFavorites } = useContext(AuthContext);
+  
+  const favoriteItems = user?.favorites || [];
 
+  if (!user) {
+    return <h2>Por favor, faça login para ver sua lista de favoritos.</h2>;
+  }
   return (
     <div className="fav-container">
       <Header />
@@ -28,25 +30,20 @@ const Favorites = () => {
           </div>
 
           <div className="items-list">
-            {favoritos.map((item) => (
-              <div key={item.id} className="fav-item">
-                <div className="item-info">
-                  <div className="item-image">
-                    <img src="https://images.unsplash.com/photo-1671438118097-479e63198629?q=80&w=877&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt={item.nome} />
-                  </div>
-                  <div className="item-details">
-                    <h3>{item.nome}</h3>
-                    <div className="price-qty">
-                      <span className="unit-price">R$ {item.preco.toFixed(2).replace('.', ',')}</span>
-                      <span className="quantity">x {String(item.qtd).padStart(2, '0')}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="item-total">
-                  <span>R$ {item.total.toFixed(2).replace('.', ',')}</span>
-                </div>
-              </div>
-            ))}
+            {favoriteItems.length > 0 ? (
+              favoriteItems.map((product) => (
+                <FavoriteItem 
+                  key={product.id}
+                  id={product.id} 
+                  item={product.title} 
+                  price={product.price} 
+                  imageProduct={product.image}
+                  onRemove={() => removeFromFavorites(product.id)}
+                />
+              ))
+            ) : (
+              <p>Você ainda não tem favoritos.</p>
+            )}
           </div>
         </div>
 

@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-import Home from "../screens/Home/Home";
 import CriarConta from "../screens/CriarConta/CriarConta";
 import Login from "../screens/Login/Login";
-import Teste from "../screens/Teste/Teste";
 import Main from "../screens/Main/Main";
 import Favorites from "../screens/Favorites/Favorites";
 import { AuthProvider } from "../context/AuthContext";
@@ -18,12 +16,10 @@ const RoutesApp = () => {
             <BrowserRouter>
                 <Routes>
                     <Route element={<Main />}   path="/" exact />
-                    <Route element={<Home />}   path="/home" />
                     <Route element={<Login />}  path="/login" />
                     <Route element={<Favorites /> }  path="/favorites" />
                     <Route element={<CriarConta />}   path="/criar-conta" />
                     <Route element={<Info />}   path="/info/:id" />
-                    <Route element={<Teste />}   path="/teste/:id" />
                     <Route element={<Checkout />} path="/checkout" />
                     <Route element={<ShoppingCart />} path="/shopping-cart" />
                 </Routes>

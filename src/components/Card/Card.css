@@ -61,6 +61,10 @@
     transition: opacity 0.2s;
 }
 
+.heart-full{
+    color: var(--sixth-color);
+}
+
 .container-info-product {
     color: var(--text-first-color);
     padding: 15px 15px 0 15px;
