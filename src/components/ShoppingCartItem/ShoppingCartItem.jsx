@@ -5,7 +5,7 @@ import { FaMinus, FaTrashAlt } from "react-icons/fa";
 import "./ShoppingCartItem.css";
 
 function ShoppingCartItem({ item, price, amount, imageProduct }) {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
 
   const totalPrice = (price * amount).toLocaleString("pt-BR", {
     style: "currency",

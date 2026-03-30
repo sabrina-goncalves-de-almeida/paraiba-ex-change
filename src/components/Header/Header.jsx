@@ -30,17 +30,17 @@ function Header() {
             <div className="header-actions">
                 {!user ? (
                     <div className="auth-buttons">
-                        <Link to="/login">
+                        <Link to="/login" className="link-formatation">
                             <Button btnText={"Entrar"} variant={"White"} />
                         </Link>
-                        <Link to="/criar-conta">
+                        <Link to="/criar-conta" className="link-formatation">
                             <Button btnText={"Criar conta"} variant={"Orange"} />
                         </Link>
                         <div className="header-icons">
-                            <Link to="/login">
+                            <Link to="/login" className="link-formatation">
                                 <FiHeart />
                             </Link>
-                            <Link to="/login">
+                            <Link to="/login" className="link-formatation">
                                 <FiShoppingCart />
                             </Link>
                         </div>
@@ -51,7 +51,7 @@ function Header() {
                             <Link to='/favorites'>
                                 <FiHeart />
                             </Link>
-                            <Link to="/carrinho">
+                            <Link to="/shopping-cart">
                                 <FiShoppingCart />
                             </Link>
                         </div>

@@ -10,6 +10,7 @@ import Favorites from "../screens/Favorites/Favorites";
 import { AuthProvider } from "../context/AuthContext";
 import Info from "../screens/Info/Info";
 import Checkout from "../screens/Checkout/Checkout";
+import ShoppingCart from "../screens/ShoppingCart/ShoppingCart";
 
 const RoutesApp = () => {
    return(
@@ -24,6 +25,7 @@ const RoutesApp = () => {
                     <Route element={<Info />}   path="/info/:id" />
                     <Route element={<Teste />}   path="/teste/:id" />
                     <Route element={<Checkout />} path="/checkout" />
+                    <Route element={<ShoppingCart />} path="/shopping-cart" />
                 </Routes>
             </BrowserRouter>
         </AuthProvider>

@@ -1,0 +1,45 @@
+@import '../../global.css';
+
+.container-shopping-cart-and-header{
+    background-color: var(--fifth-color);
+    color: var(--text-first-color);
+    height: 100%;
+    width: 100%;
+}
+
+.container-shopping-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-titles-table-prices{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.container-itens-shopping-cart{
+    width: 80%;
+}
+
+.container-titles-table-text{
+    font-size: 28px;
+}
+
+.container-titles-table-total{
+    font-size: 32px;
+}
+
+.container-buttons-buying{
+    display: grid;
+    gap: 20px;
+    width: 80%;
+    grid-auto-flow: column;
+    padding: 10px 300px 30px 10px;
+}
+
+.link-formatation{
+    text-decoration: none;
+    color: inherit;
+}

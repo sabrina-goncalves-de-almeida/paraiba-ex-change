@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './Info.css';
 
 import { 
@@ -12,7 +12,6 @@ import {
   FiMessageSquare 
 } from 'react-icons/fi';
 
-import LogoPBX from '../../assets/logo/1211 Sem Título_20260220094915.png';
 import Header from '../../components/Header/Header';
 import ProductCarousel from '../../components/CarouselProduct/ProductCarousel';
 
@@ -88,10 +87,13 @@ const Info = () => {
               <p>Telefone/WhatsApp: (83) 91546-2356</p>
             </div>
 
-            <button className="btn-chat">
-              <FiMessageSquare />
-              Chat com o vendedor
-            </button>
+            <Link to="/shopping-cart" className="link-formatation">
+              <button className="btn-chat">
+                <FiMessageSquare />
+                Chat com o vendedor
+              </button>
+            </Link>
+            
           </aside>
 
         </div>
