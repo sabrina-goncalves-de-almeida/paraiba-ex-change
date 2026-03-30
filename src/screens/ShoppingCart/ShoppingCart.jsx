@@ -9,7 +9,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import "./ShoppingCart.css";
 
 function ShoppingCart() {
-  const { user, removeFromCart } = useContext(AuthContext);
+  const { user, removeFromCart, decreaseQuantity } = useContext(AuthContext);
 
   const cartItems = user?.cart || [];
 
@@ -25,7 +25,6 @@ function ShoppingCart() {
   if (!user) {
     return <h2>Por favor, faça login para ver seu carrinho.</h2>;
   }
-  console.log("IDs presentes no carrinho:", cartItems.map(p => p.id));
   return (
     <div className="container-shopping-cart-and-header">
       <Header />
@@ -42,8 +41,8 @@ function ShoppingCart() {
                 price={product.price} 
                 amount={product.amount} 
                 imageProduct={product.image}
-                // Exemplo de botão para remover:
                 onRemove={() => removeFromCart(product.id)}
+                onDecrease={() => decreaseQuantity(product.id)}
               />
             ))
           ) : (
@@ -57,7 +56,9 @@ function ShoppingCart() {
         </div>
         
         <div className="container-buttons-buying">
-          <Button variant={BUTTON_VARIANTS.WHITE} btnText="Finalizar compra" />
+          <Link to="/checkout">
+            <Button variant={BUTTON_VARIANTS.WHITE} btnText="Finalizar compra" />
+          </Link>
           
           <Link to="/" className="link-formatation">
             <Button 

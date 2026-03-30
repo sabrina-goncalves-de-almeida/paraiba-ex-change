@@ -77,6 +77,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    margin: 0 15px;
     font-size: 40px;
     color: var(--text-gray);
 }
@@ -88,10 +89,37 @@
 
 .logout-button{
     font-size: 20px;
-    color: var(--text-first-color);
+    color: var(--sixth-color);
 }
 
-.link-formatation{
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-gray);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.active-item {
+    background-color: var(--icons-background-first);
+    border: 2px solid #ffffffb3;
+    color: var(--sixth-color);
+    box-shadow: 0 2px 5px #0000001a;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0; 
+    margin-top: 0;
+}
+
+.icon-container:hover:not(.active-item) {
+    background-color: #ffffff1a;
 }

@@ -46,6 +46,33 @@ const addToCart = (product) => {
   });
 };
 
+  const decreaseQuantity = (productId) => {
+    if (!user) return;
+
+    setUser(prevUser => {
+      const currentCart = Array.isArray(prevUser.cart) ? prevUser.cart : [];
+      const itemIndex = currentCart.findIndex(item => item.id === productId);
+
+      if (itemIndex === -1) return prevUser; // Item não encontrado
+
+      let updatedCart;
+
+      if (currentCart[itemIndex].amount <= 1) {
+        updatedCart = currentCart.filter(item => item.id !== productId);
+      } else {
+        updatedCart = [...currentCart];
+        updatedCart[itemIndex] = { 
+          ...updatedCart[itemIndex], 
+          amount: updatedCart[itemIndex].amount - 1 
+        };
+      }
+
+      const updatedUser = { ...prevUser, cart: updatedCart };
+      localStorage.setItem("user_logged", JSON.stringify(updatedUser));
+      return updatedUser;
+    });
+  };
+
   const removeFromCart = (productId) => {
     if (!user) return;
 
@@ -57,7 +84,7 @@ const addToCart = (product) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, addToCart, removeFromCart }}>
+    <AuthContext.Provider value={{ user, login, logout, addToCart, removeFromCart, decreaseQuantity }}>
       {children}
     </AuthContext.Provider>
   );

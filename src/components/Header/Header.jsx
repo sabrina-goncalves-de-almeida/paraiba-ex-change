@@ -1,5 +1,5 @@
 import { useContext } from 'react'; // Importe o useContext
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FiSearch, FiHeart, FiShoppingCart, FiLogOut } from "react-icons/fi";
 import { FaCircleUser } from 'react-icons/fa6';
 import { AuthContext } from "../../context/AuthContext";
@@ -10,6 +10,7 @@ import "./Header.css";
 function Header() {
     const { user, logout } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogout = () => {
         logout();
@@ -48,10 +49,17 @@ function Header() {
                 ) : (
                     <div className="container-user">
                         <div className="header-icons">
-                            <Link to='/favorites'>
+                            <Link 
+                                to='/favorites' 
+                                className={`icon-container ${location.pathname === '/favorites' ? 'active-item' : ''}`}
+                            >
                                 <FiHeart />
                             </Link>
-                            <Link to="/shopping-cart">
+
+                            <Link 
+                                to="/shopping-cart" 
+                                className={`icon-container ${location.pathname === '/shopping-cart' ? 'active-item' : ''}`}
+                            >
                                 <FiShoppingCart />
                             </Link>
                         </div>
