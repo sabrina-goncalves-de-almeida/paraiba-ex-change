@@ -53,7 +53,7 @@ const addToCart = (product) => {
       const currentCart = Array.isArray(prevUser.cart) ? prevUser.cart : [];
       const itemIndex = currentCart.findIndex(item => item.id === productId);
 
-      if (itemIndex === -1) return prevUser; // Item não encontrado
+      if (itemIndex === -1) return prevUser;
 
       let updatedCart;
 
@@ -83,8 +83,39 @@ const addToCart = (product) => {
     localStorage.setItem("user_logged", JSON.stringify(updatedUser));
   };
 
+  const addToFavorites = (product) => {
+    if (!user) return;
+
+    setUser(prevUser => {
+      const currentFavs = Array.isArray(prevUser.favorites) ? prevUser.favorites : [];
+      
+      const exists = currentFavs.find(item => item.id === product.id);
+      if (exists) return prevUser; 
+
+      const updatedFavs = [...currentFavs, product];
+      const updatedUser = { ...prevUser, favorites: updatedFavs };
+      
+      localStorage.setItem("user_logged", JSON.stringify(updatedUser));
+      return updatedUser;
+    });
+  };
+
+  const removeFromFavorites = (productId) => {
+    if (!user) return;
+
+    setUser(prevUser => {
+      const currentFavs = Array.isArray(prevUser.favorites) ? prevUser.favorites : [];
+      const updatedFavs = currentFavs.filter(item => item.id !== productId);
+      
+      const updatedUser = { ...prevUser, favorites: updatedFavs };
+      localStorage.setItem("user_logged", JSON.stringify(updatedUser));
+      return updatedUser;
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout, addToCart, removeFromCart, decreaseQuantity }}>
+    <AuthContext.Provider value={{ user, login, logout, addToCart, removeFromCart, decreaseQuantity,
+    addToFavorites, removeFromFavorites }}>
       {children}
     </AuthContext.Provider>
   );

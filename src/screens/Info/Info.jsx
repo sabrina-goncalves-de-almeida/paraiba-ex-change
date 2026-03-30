@@ -42,42 +42,17 @@ const Info = ({ product }) => {
   return (
     <div className="info-container">
       <Header />
-      {/* <header className="info-header">
-        <div className="header-limit">
-          <div className="logo-area">
-            <img src={LogoPBX} alt="Logo PBX" />
-          </div>
-
-          <div className="search-box">
-            <input type="text" placeholder="Buscar produtos, casas..." />
-            <FiSearch className="search-btn-icon" />
-          </div>
-
-          <div className="nav-icons">
-            <FiHeart className="nav-icon" />
-            <FiShoppingCart className="nav-icon" />
-            <div className="profile-avatar">
-              <FiUser />
-            </div>
-          </div>
-        </div>
-      </header> */}
 
       <main className="info-content">
         <div className="property-grid">
 
           <div className="property-visual">
-            <ProductCarousel product={currentProduct} />
-            {/* <div className="main-image-wrapper">
-              <img 
-                src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400" 
-                alt="Apartamento" 
-              />
-              <button className="slide-arrow left"><FiChevronLeft /></button>
-              <button className="slide-arrow right"><FiChevronRight /></button>
-              <FiHeart className="floating-heart" />
-            </div> */}
-
+            <ProductCarousel 
+              id={currentProduct.id}
+              name={currentProduct.name}
+              price={currentProduct.price}
+              product={currentProduct}
+            />
             <section className="description-area">
               <h2>{currentProduct.title}</h2>
               <p>

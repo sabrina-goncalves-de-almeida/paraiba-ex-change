@@ -1,11 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "./ProductCarousel.css";
 
-function ProductCarousel({ product = { images: [] } }) {
+function ProductCarousel({ product = { images: [] }, id, price, imgBaseUrl, name }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = product.images.length;
+
+  const { user, addToFavorites, removeFromFavorites } = useContext(AuthContext);
+      
+  const isFavorite = user?.favorites?.some(fav => fav.id === id);
+
+  const handleFavoriteClick = () => {
+      if (!user) {
+          alert("Faça login para favoritar!");
+          return;
+      }
+
+      if (isFavorite) {
+          removeFromFavorites(id);
+      } else {
+          addToFavorites({ 
+            id, 
+            title: name || "Produto sem nome",
+            price, 
+            image: product.images[0] || `${imgBaseUrl}${id}.png` 
+          });
+      }
+  };
 
   const swipeLeft = () => {
     setCurrentIndex((prev) => (prev === 0 ? totalImages - 1 : prev - 1));
@@ -20,11 +44,18 @@ function ProductCarousel({ product = { images: [] } }) {
   return (
     <div className="container-carousel">
       <div className="container-icon-heart">
-        <button className="btn-icon-heart" aria-label="Adicionar aos favoritos">
-          <FiHeart className="img-icon" />
+        <button 
+          className="btn-icon-heart heart-full" 
+          aria-label="Adicionar aos favoritos"
+          onClick={handleFavoriteClick}
+          style={{ cursor: 'pointer' }}
+        >
+          {isFavorite ? 
+              <FaHeart className="img-icon heart-full-bigger"/> : 
+              <FiHeart aria-hidden="true" className="img-icon"/>
+          }
         </button>
       </div>
-
       <div className="container-arrow-buttons">
         <button onClick={swipeLeft} className="container-icon" aria-label="Imagem anterior">
           <FaArrowLeft className="img-icon" />

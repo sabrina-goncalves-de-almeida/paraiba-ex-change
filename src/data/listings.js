@@ -64,5 +64,5 @@ export const LISTINGS_MOCK = [
     images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400'],
     description: 'Espetacular casa de alto padrão com 270m². Dispõe de uma área de lazer completa com piscina, churrasqueira e amplo jardim. Projetada com acabamentos nobres e ambientes espaçosos, é o refúgio ideal para quem não abre mão do lazer e da sofisticação.',
     local: 'PB - Campina Grande'
-  }
+  },
 ];

@@ -83,6 +83,10 @@
     color: var(--fifth-color);
 }
 
+.heart-full-bigger{
+    color: var(--sixth-color);
+}
+
 @media (max-width: 480px) {
     .container-icon, .btn-icon-heart {
         width: 2.2rem;
